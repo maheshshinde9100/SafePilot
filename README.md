@@ -2,6 +2,8 @@
 
 SafePilot is an IoT-enabled safety platform that authenticates drivers (RFID/Fingerprint), screens for alcohol and drowsiness, and empowers car owners/admins with real-time controls, telemetry, and alerting. It integrates edge Python for drowsiness detection with a modern React web app and Appwrite for secure data storage.
 
+![Admin Dashboard](screenshots/admin-dashboard.png)
+
 ## Features
 
 - **Driver Authentication** via RFID or Fingerprint. Ignition is allowed only after successful verification.
@@ -367,5 +369,20 @@ Permissions are configured for authenticated users with appropriate read/write a
 
 SafePilot addresses critical road safety challenges by creating an integrated IoT ecosystem that prevents impaired and drowsy driving through multi-layered verification and real-time monitoring. The system empowers vehicle owners with remote oversight capabilities while maintaining driver privacy and providing immediate emergency response protocols.
 
+## Screenshots
 
+### Admin Dashboard
+Real-time monitoring view for admins showing live sensor telemetry (heart rate, alcohol level, speed), driver verification status, ignition/remote control state, and active critical/warning alerts.
+![Admin Dashboard](screenshots/admin-dashboard.png)
 
+### Owner/Admin – Garage Management
+Interface for adding and managing vehicles, including plate number, VIN, make, model, year, and color — along with active driver assignments per car.
+![Garage Management](screenshots/garage-management.png)
+
+### Driver Dashboard
+Driver-facing real-time view showing live heart rate, alcohol level, and speed readings, along with ignition status, remote control state, and active alerts relevant to the current session.
+![Driver Dashboard](screenshots/driver-dashboard.png)
+
+### Driver Records
+Historical view of a driver's session stats (heart rate, drowsiness, alcohol level, proximity) along with a log of recent warning and critical alerts.
+![Driver Records](screenshots/driver-records.png)
