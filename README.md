@@ -19,6 +19,15 @@ SafePilot is an IoT-enabled safety platform that authenticates drivers (RFID/Fin
 ### System Architecture Diagram
 
 ```mermaid
+%%{init: {
+  'theme': 'base',
+  'themeVariables': {
+    'textColor': '#1e293b',
+    'primaryTextColor': '#1e293b',
+    'lineColor': '#64748b',
+    'edgeLabelBackground': '#ffffff'
+  }
+}}%%
 graph TD
     %% Define styles
     classDef hardware fill:#f97316,stroke:#ea580c,color:#ffffff,stroke-width:3px;
@@ -106,6 +115,15 @@ graph TD
 ### Component Diagram
 
 ```mermaid
+%%{init: {
+  'theme': 'base',
+  'themeVariables': {
+    'textColor': '#1e293b',
+    'primaryTextColor': '#1e293b',
+    'lineColor': '#64748b',
+    'edgeLabelBackground': '#ffffff'
+  }
+}}%%
 graph TB
     %% Styles
     classDef webapp fill:#10b981,stroke:#059669,color:#ffffff,stroke-width:3px;
@@ -183,6 +201,27 @@ graph TB
 ### Sequence Diagram
 
 ```mermaid
+%%{init: {
+  'theme': 'base',
+  'themeVariables': {
+    'primaryColor': '#e0f2fe',
+    'primaryTextColor': '#1e293b',
+    'primaryBorderColor': '#0284c7',
+    'lineColor': '#475569',
+    'textColor': '#1e293b',
+    'actorTextColor': '#1e293b',
+    'actorBkg': '#e0f2fe',
+    'actorBorder': '#0284c7',
+    'signalColor': '#475569',
+    'signalTextColor': '#1e293b',
+    'labelTextColor': '#1e293b',
+    'loopTextColor': '#1e293b',
+    'noteBkgColor': '#fef9c3',
+    'noteTextColor': '#1e293b',
+    'noteBorderColor': '#eab308',
+    'sequenceNumberColor': '#1e293b'
+  }
+}}%%
 sequenceDiagram
     autonumber
     participant Owner as Owner
@@ -261,6 +300,24 @@ sequenceDiagram
 ### State Machine Diagram
 
 ```mermaid
+%%{init: {
+  'theme': 'base',
+  'themeVariables': {
+    'primaryColor': '#ede9fe',
+    'primaryTextColor': '#1e293b',
+    'primaryBorderColor': '#7c3aed',
+    'lineColor': '#475569',
+    'textColor': '#1e293b',
+    'labelTextColor': '#1e293b',
+    'stateLabelColor': '#1e293b',
+    'stateBkg': '#ede9fe',
+    'transitionColor': '#475569',
+    'transitionLabelColor': '#1e293b',
+    'compositeTitleBackground': '#ddd6fe',
+    'compositeBackground': '#f5f3ff',
+    'altBackground': '#f5f3ff'
+  }
+}}%%
 stateDiagram-v2
     direction LR
     [*] --> AwaitVerification
