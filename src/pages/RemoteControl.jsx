@@ -313,7 +313,7 @@ export default function RemoteControl() {
             {/* Drive Control Panel */}
             <div className="bg-slate-900/60 border border-slate-800 rounded-xl p-6">
               <h3 className="text-lg font-semibold text-slate-200 mb-4 border-b border-slate-700 pb-2">
-                🚗 Drive Control (BTS7960)
+                  Drive Control (BTS7960)
               </h3>
               
               {/* Speed Display */}
@@ -372,7 +372,7 @@ export default function RemoteControl() {
             {/* Steering Control Panel */}
             <div className="bg-slate-900/60 border border-slate-800 rounded-xl p-6">
               <h3 className="text-lg font-semibold text-slate-200 mb-4 border-b border-slate-700 pb-2">
-                🎮 Steering Control (L298N)
+                  Steering Control (L298N)
               </h3>
               
               {/* Steering Wheel Visual */}

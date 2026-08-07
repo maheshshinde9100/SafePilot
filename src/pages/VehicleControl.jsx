@@ -453,7 +453,7 @@ export default function VehicleControl() {
             {/* Drive Control Panel */}
             <div className="bg-slate-900/60 border border-slate-800 rounded-xl p-6">
               <h3 className="text-lg font-semibold text-slate-200 mb-4 border-b border-slate-700 pb-2">
-                🚗 Drive Control
+                  Drive Control
               </h3>
               
               {/* Speed Display */}
@@ -536,7 +536,7 @@ export default function VehicleControl() {
             {/* Steering Control Panel */}
             <div className="bg-slate-900/60 border border-slate-800 rounded-xl p-6">
               <h3 className="text-lg font-semibold text-slate-200 mb-4 border-b border-slate-700 pb-2">
-                🎮 Steering Control
+                  Steering Control
               </h3>
               
               {/* Steering Wheel Visual */}

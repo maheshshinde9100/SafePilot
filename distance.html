@@ -221,7 +221,7 @@
                 });
 
                 client.on('message', function (topic, message) {
-                    console.log("📨 Message received on topic:", topic);
+                    console.log("  Message received on topic:", topic);
                     try {
                         const data = JSON.parse(message.toString());
                         updateDisplay(data);

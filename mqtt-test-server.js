@@ -34,7 +34,7 @@ wss.on('connection', (ws) => {
   ws.on('message', (data) => {
     try {
       const command = JSON.parse(data.toString());
-      console.log('📨 Received command:', command);
+      console.log('  Received command:', command);
       
       // Process commands
       switch (command.type) {
@@ -43,14 +43,14 @@ wss.on('connection', (ws) => {
             direction: command.direction,
             speed: command.speed || 0
           };
-          console.log(`🚗 Drive: ${command.direction} at ${command.speed} PWM`);
+          console.log(`  Drive: ${command.direction} at ${command.speed} PWM`);
           break;
           
         case 'steer':
           vehicleState.steer = {
             direction: command.direction
           };
-          console.log(`🎮 Steer: ${command.direction}`);
+          console.log(`  Steer: ${command.direction}`);
           break;
           
         case 'emergency_stop':
@@ -90,9 +90,9 @@ wss.on('connection', (ws) => {
 
 const PORT = process.env.MQTT_TEST_PORT || 3002;
 server.listen(PORT, () => {
-  console.log('🧪 MQTT Test Server running on port', PORT);
+  console.log('  MQTT Test Server running on port', PORT);
   console.log('  WebSocket endpoint: ws://localhost:' + PORT);
-  console.log('🎮 Use this for testing vehicle controls without real MQTT broker');
+  console.log('  Use this for testing vehicle controls without real MQTT broker');
   console.log('');
   console.log('Vehicle State:');
   console.log('- Drive:', vehicleState.drive);
