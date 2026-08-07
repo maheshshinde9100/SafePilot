@@ -56,7 +56,7 @@ wss.on('connection', (ws) => {
         case 'emergency_stop':
           vehicleState.drive = { direction: 'stop', speed: 0 };
           vehicleState.steer = { direction: 'center' };
-          console.log('🚨 EMERGENCY STOP!');
+          console.log('  EMERGENCY STOP!');
           break;
           
         case 'status_request':
@@ -75,7 +75,7 @@ wss.on('connection', (ws) => {
       }));
       
     } catch (error) {
-      console.error('❌ Error processing message:', error);
+      console.error('     Error processing message:', error);
     }
   });
 
@@ -84,14 +84,14 @@ wss.on('connection', (ws) => {
   });
 
   ws.on('error', (error) => {
-    console.error('❌ WebSocket error:', error);
+    console.error('     WebSocket error:', error);
   });
 });
 
 const PORT = process.env.MQTT_TEST_PORT || 3002;
 server.listen(PORT, () => {
   console.log('🧪 MQTT Test Server running on port', PORT);
-  console.log('📡 WebSocket endpoint: ws://localhost:' + PORT);
+  console.log('  WebSocket endpoint: ws://localhost:' + PORT);
   console.log('🎮 Use this for testing vehicle controls without real MQTT broker');
   console.log('');
   console.log('Vehicle State:');
@@ -103,9 +103,9 @@ server.listen(PORT, () => {
 
 // Graceful shutdown
 process.on('SIGINT', () => {
-  console.log('\n🛑 Shutting down MQTT test server...');
+  console.log('\n  Shutting down MQTT test server...');
   server.close(() => {
-    console.log('✅ Server closed');
+    console.log('  Server closed');
     process.exit(0);
   });
 });

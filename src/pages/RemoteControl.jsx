@@ -181,7 +181,7 @@ export default function RemoteControl() {
   const emergencyStop = useCallback(() => {
     sendCommand({ type: 'drive', direction: 'stop', speed: 0 });
     sendCommand({ type: 'steer', direction: 'center' });
-    addLog('🚨 EMERGENCY STOP activated!', 'error');
+    addLog('  EMERGENCY STOP activated!', 'error');
   }, [sendCommand, addLog]);
 
   // Keyboard controls
@@ -358,7 +358,7 @@ export default function RemoteControl() {
                   onClick={stopDrive}
                   className="w-full py-4 bg-rose-600 hover:bg-rose-500 rounded-lg text-white font-semibold transition-all hover:scale-105 active:scale-95"
                 >
-                  ⏹️ STOP
+                    STOP
                 </button>
                 <button
                   onClick={() => sendDriveCommand('backward')}
@@ -417,7 +417,7 @@ export default function RemoteControl() {
               onClick={emergencyStop}
               className="px-8 py-4 bg-gradient-to-r from-rose-600 to-rose-700 hover:from-rose-500 hover:to-rose-600 rounded-xl text-white font-bold text-lg shadow-lg shadow-rose-500/25 transition-all hover:scale-105 active:scale-95"
             >
-              🚨 EMERGENCY STOP
+                EMERGENCY STOP
             </button>
           </div>
 
@@ -486,7 +486,7 @@ export default function RemoteControl() {
             {/* Control Logs */}
             <div className="bg-slate-900/60 border border-slate-800 rounded-xl p-6">
               <h3 className="text-lg font-semibold text-slate-200 mb-4 border-b border-slate-700 pb-2">
-                📝 System Logs
+                   System Logs
               </h3>
               
               <div className="h-80 overflow-y-auto space-y-1 font-mono text-sm">

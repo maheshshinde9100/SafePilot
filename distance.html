@@ -206,16 +206,16 @@
                 client = mqtt.connect(url, options);
 
                 client.on('connect', function () {
-                    console.log("✅ Connected to HiveMQ");
+                    console.log("  Connected to HiveMQ");
                     isConnected = true;
                     updateConnectionStatus("Connected to HiveMQ Cloud", "connected");
                     
                     // Subscribe to vehicle status topic
                     client.subscribe('vehicle/status', function (err) {
                         if (!err) {
-                            console.log("✅ Subscribed to vehicle/status");
+                            console.log("  Subscribed to vehicle/status");
                         } else {
-                            console.error("❌ Subscription error:", err);
+                            console.error("     Subscription error:", err);
                         }
                     });
                 });
@@ -226,12 +226,12 @@
                         const data = JSON.parse(message.toString());
                         updateDisplay(data);
                     } catch (error) {
-                        console.error("❌ Error parsing message:", error);
+                        console.error("     Error parsing message:", error);
                     }
                 });
 
                 client.on('error', function (error) {
-                    console.error("❌ MQTT error:", error);
+                    console.error("     MQTT error:", error);
                     updateConnectionStatus("Connection error: " + error.message, "disconnected");
                     isConnected = false;
                 });
@@ -249,7 +249,7 @@
                 });
 
             } catch (error) {
-                console.error("❌ Connection error:", error);
+                console.error("     Connection error:", error);
                 updateConnectionStatus("Error: " + error.message, "disconnected");
             }
         }

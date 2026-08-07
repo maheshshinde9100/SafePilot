@@ -27,10 +27,10 @@ async function setup() {
         documentSecurity: false,
         enabled: true,
       });
-      console.log(`✅ Collection ${name} created`);
+      console.log(`  Collection ${name} created`);
     } catch (err) {
       if (err.code === 409) {
-        console.log(`ℹ️ Collection ${name} already exists`);
+        console.log(`    Collection ${name} already exists`);
       } else throw err;
     }
 
@@ -80,14 +80,14 @@ async function setup() {
             });
             break;
           default:
-            console.warn(`⚠️ Unhandled attribute type: ${type}`);
+            console.warn(`  Unhandled attribute type: ${type}`);
         }
         console.log(`   ➕ Attribute ${key} (${type}) added`);
       } catch (err) {
         if (err.code === 409) {
-          console.log(`   ℹ️ Attribute ${key} already exists`);
+          console.log(`       Attribute ${key} already exists`);
         } else {
-          console.error(`   ❌ Error on ${key}:`, err.message);
+          console.error(`        Error on ${key}:`, err.message);
         }
       }
     }
@@ -106,9 +106,9 @@ async function setup() {
       console.log(`   🔎 Index ${key} created on ${collectionId}`);
     } catch (err) {
       if (err.code === 409) {
-        console.log(`   ℹ️ Index ${key} already exists on ${collectionId}`);
+        console.log(`       Index ${key} already exists on ${collectionId}`);
       } else {
-        console.error(`   ❌ Index ${key} error:`, err.message);
+        console.error(`        Index ${key} error:`, err.message);
       }
     }
   }
@@ -125,14 +125,14 @@ async function setup() {
         permissions,
         documentSecurity: col.documentSecurity,
       });
-      console.log(`   🔐 Permissions updated for ${collectionId}`);
+      console.log(`     Permissions updated for ${collectionId}`);
     } catch (err) {
       if (err.code === 404) {
-        console.log(`   ℹ️ Skipped permissions for missing collection ${collectionId}`);
+        console.log(`       Skipped permissions for missing collection ${collectionId}`);
       } else if (err.code === 409) {
-        console.log(`   ℹ️ Permissions already set for ${collectionId}`);
+        console.log(`       Permissions already set for ${collectionId}`);
       } else {
-        console.error(`   ❌ Permissions update failed for ${collectionId}:`, err.message);
+        console.error(`        Permissions update failed for ${collectionId}:`, err.message);
       }
     }
   }
@@ -378,7 +378,7 @@ async function setup() {
     await ensureCollectionPermissions(process.env.VITE_APPWRITE_COL_EMERGENCY_CASES, ['read("users")', 'create("users")', 'update("users")', 'delete("users")']);
   }
 
-  console.log("🎉 Setup complete.");
+  console.log("   Setup complete.");
 }
 
 setup().catch((err) => console.error("Fatal error:", err));

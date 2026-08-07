@@ -101,7 +101,7 @@ export default function AdminPage() {
                 {/* 1. EMERGENCY CASES */}
                 <section>
                   <h2 className="text-xl text-rose-400 mb-4 flex items-center gap-2">
-                    <span>🚨 Active Emergencies</span>
+                    <span>  Active Emergencies</span>
                     {emergencies.length > 0 && <span className="bg-rose-600 text-white text-xs px-2 py-0.5 rounded-full">{emergencies.length}</span>}
                   </h2>
                   {emergencies.length === 0 ? (

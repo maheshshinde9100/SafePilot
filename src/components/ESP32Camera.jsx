@@ -29,7 +29,7 @@ const ESP32Camera = () => {
                     ></iframe>
                 ) : (
                     <div className="flex flex-col items-center justify-center h-full text-slate-500 p-6 text-center">
-                        <span className="text-4xl mb-4">⚠️</span>
+                        <span className="text-4xl mb-4"> </span>
                         <p className="text-sm font-bold text-slate-300 mb-1">CAMERA CONNECTION ERROR</p>
                         <p className="text-xs text-slate-500">
                             Make sure the ESP32 is powered on and your computer is on the same WiFi network.
