@@ -453,7 +453,7 @@ export default function VehicleControl() {
             {/* Drive Control Panel */}
             <div className="bg-slate-900/60 border border-slate-800 rounded-xl p-6">
               <h3 className="text-lg font-semibold text-slate-200 mb-4 border-b border-slate-700 pb-2">
-                🚗 Drive Control
+                  Drive Control
               </h3>
               
               {/* Speed Display */}
@@ -505,7 +505,7 @@ export default function VehicleControl() {
                   onTouchEnd={stopDrive}
                   className="flex-1 h-24 bg-gradient-to-b from-rose-600 to-rose-700 hover:from-rose-500 hover:to-rose-600 rounded-xl border-4 border-rose-800 flex flex-col items-center justify-center text-white font-bold transition-all active:scale-95 active:translate-y-1"
                 >
-                  <div className="text-2xl mb-1">⏹️</div>
+                  <div className="text-2xl mb-1"> </div>
                   <div className="text-sm">BRAKE/REV</div>
                 </button>
               </div>
@@ -522,7 +522,7 @@ export default function VehicleControl() {
                   onClick={stopDrive}
                   className="flex-1 py-3 bg-rose-600 hover:bg-rose-500 rounded-md text-white font-semibold transition-colors"
                 >
-                  🛑 STOP
+                    STOP
                 </button>
                 <button
                   onClick={() => sendDriveCommand('backward')}
@@ -536,7 +536,7 @@ export default function VehicleControl() {
             {/* Steering Control Panel */}
             <div className="bg-slate-900/60 border border-slate-800 rounded-xl p-6">
               <h3 className="text-lg font-semibold text-slate-200 mb-4 border-b border-slate-700 pb-2">
-                🎮 Steering Control
+                  Steering Control
               </h3>
               
               {/* Steering Wheel Visual */}
@@ -604,7 +604,7 @@ export default function VehicleControl() {
               onClick={emergencyStop}
               className="px-8 py-4 bg-gradient-to-r from-rose-600 to-rose-700 hover:from-rose-500 hover:to-rose-600 rounded-xl text-white font-bold text-lg shadow-lg shadow-rose-500/25 transition-all hover:scale-105 active:scale-95"
             >
-              🚨 EMERGENCY STOP
+                EMERGENCY STOP
             </button>
           </div>
 
@@ -671,7 +671,7 @@ export default function VehicleControl() {
             {/* Control Logs */}
             <div className="bg-slate-900/60 border border-slate-800 rounded-xl p-6">
               <h3 className="text-lg font-semibold text-slate-200 mb-4 border-b border-slate-700 pb-2">
-                📝 Control Logs
+                   Control Logs
               </h3>
               
               <div className="h-64 overflow-y-auto space-y-1 font-mono text-sm">

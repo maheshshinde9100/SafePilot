@@ -50,18 +50,18 @@ const mqttClient = mqtt.connect(mqttUrl, {
 });
 
 mqttClient.on('connect', () => {
-  console.log('✅ MQTT Connected to HiveMQ Cloud');
+  console.log('  MQTT Connected to HiveMQ Cloud');
   mqttClient.subscribe('vehicle/+/status'); // Subscribe to all vehicle status topics
 });
 
 mqttClient.on('error', (err) => {
-  console.error('❌ MQTT Error:', err);
+  console.error('     MQTT Error:', err);
 });
 
 // Helper to send MQTT commands
 const sendVehicleCommand = (carId, commandObj) => {
   const topic = `${process.env.VITE_MQTT_COMMAND_TOPIC}`; // Or specific car topic if needed
-  console.log(`📤 sending MQTT to ${topic}:`, commandObj);
+  console.log(`  sending MQTT to ${topic}:`, commandObj);
   mqttClient.publish(topic, JSON.stringify({ ...commandObj, carId }));
 };
 
@@ -84,9 +84,9 @@ async function logEvent(data) {
       snap_location_lng: data.snapshot?.location?.lng || 0.0,
       timestamp: new Date().toISOString(),
     });
-    console.log(`📝 Event Logged: ${data.eventType} (${data.severity})`);
+    console.log(`   Event Logged: ${data.eventType} (${data.severity})`);
   } catch (err) {
-    console.error('⚠️ Failed to log event:', err.message);
+    console.error('  Failed to log event:', err.message);
   }
 }
 
@@ -102,9 +102,9 @@ async function createEmergencyCase(type, carId, driverId) {
       resolved: false,
       createdAt: new Date().toISOString(),
     });
-    console.log(`🚨 Emergency Case Created: ${type}`);
+    console.log(`  Emergency Case Created: ${type}`);
   } catch (err) {
-    console.error('⚠️ Failed to create emergency case:', err.message);
+    console.error('  Failed to create emergency case:', err.message);
   }
 }
 
@@ -146,9 +146,9 @@ async function syncVehicleState(carId, state) {
     }
 
     vehicleStates[carId] = { ...vehicleStates[carId], lastSync: now };
-    // console.log(`💾 Vehicle State Synced: ${carId}`);
+    // console.log(`  Vehicle State Synced: ${carId}`);
   } catch (err) {
-    console.error('⚠️ Failed to sync vehicle state:', err.message);
+    console.error('  Failed to sync vehicle state:', err.message);
   }
 }
 
@@ -160,12 +160,12 @@ const server = http.createServer();
 const io = new Server(server, { cors: { origin: '*' } });
 
 io.on('connection', (socket) => {
-  console.log('✅ Client connected:', socket.id);
+  console.log('  Client connected:', socket.id);
 
   // --- A. DRIVER SESSIONS (Auth) ---
   socket.on('auth_event', async (data) => {
     // data: { type: 'LOGIN', driverId, carId, ... }
-    console.log('🔐 Auth event:', data);
+    console.log('  Auth event:', data);
 
     if (data.type === 'LOGIN' && data.driverId) {
       activeSessions[data.driverId] = true; // Mark active
@@ -179,7 +179,7 @@ io.on('connection', (socket) => {
           // other counts default to 0
         });
         activeSessions[data.driverId] = sessionProto.$id; // Store real session ID
-        console.log(`▶️ New Session Started: ${sessionProto.$id}`);
+        console.log(`  New Session Started: ${sessionProto.$id}`);
       } catch (err) {
         console.error("Session creation failed", err);
       }
@@ -203,7 +203,7 @@ io.on('connection', (socket) => {
           sessionEnd: new Date().toISOString()
         });
         delete activeSessions[data.driverId];
-        console.log(`⏹️ Session Ended: ${sessionId}`);
+        console.log(`  Session Ended: ${sessionId}`);
       } catch (err) {
         console.error("Session close failed", err);
       }
@@ -330,7 +330,7 @@ io.on('connection', (socket) => {
 
   // --- D. CONTROL COMMANDS (Dashboard -> Vehicle) ---
   socket.on('control_command', (payload) => {
-    console.log('🎛️ Control command:', payload);
+    console.log('  Control command:', payload);
 
     // 1. Send to Vehicle via MQTT
     sendVehicleCommand(payload.carId, payload);
@@ -347,7 +347,7 @@ io.on('connection', (socket) => {
 
   // --- E. OTHER EVENTS ---
   socket.on('new_alert', (data) => {
-    console.log('⚠️ New alert:', data);
+    console.log('  New alert:', data);
     logEvent({
       eventType: 'MANUAL_ALERT',
       severity: data.level || 'info',
@@ -358,7 +358,7 @@ io.on('connection', (socket) => {
   });
 
   socket.on('emergency_event', (data) => {
-    console.log('🚨 Emergency event:', data);
+    console.log('  Emergency event:', data);
     createEmergencyCase('Manual Panic', data.carId, data.driverId);
     io.emit('emergency_event', data);
   });
@@ -368,11 +368,11 @@ io.on('connection', (socket) => {
   });
 
   socket.on('disconnect', () => {
-    console.log('❌ Client disconnected:', socket.id);
+    console.log('     Client disconnected:', socket.id);
   });
 });
 
 server.listen(PORT, () => {
-  console.log(`🚀 SafePilot Backend running on http://localhost:${PORT}`);
-  console.log('📡 Modes: WebSocket (Realtime) + MQTT (Control) + Appwrite (Persistence)');
+  console.log(`  SafePilot Backend running on http://localhost:${PORT}`);
+  console.log('  Modes: WebSocket (Realtime) + MQTT (Control) + Appwrite (Persistence)');
 });

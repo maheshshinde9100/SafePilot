@@ -2,6 +2,8 @@
 
 SafePilot is an IoT-enabled safety platform that authenticates drivers (RFID/Fingerprint), screens for alcohol and drowsiness, and empowers car owners/admins with real-time controls, telemetry, and alerting. It integrates edge Python for drowsiness detection with a modern React web app and Appwrite for secure data storage.
 
+![Admin Dashboard](screenshots/admin-dashboard.png)
+
 ## Features
 
 - **Driver Authentication** via RFID or Fingerprint. Ignition is allowed only after successful verification.
@@ -17,6 +19,15 @@ SafePilot is an IoT-enabled safety platform that authenticates drivers (RFID/Fin
 ### System Architecture Diagram
 
 ```mermaid
+%%{init: {
+  'theme': 'base',
+  'themeVariables': {
+    'textColor': '#1e293b',
+    'primaryTextColor': '#1e293b',
+    'lineColor': '#64748b',
+    'edgeLabelBackground': '#ffffff'
+  }
+}}%%
 graph TD
     %% Define styles
     classDef hardware fill:#f97316,stroke:#ea580c,color:#ffffff,stroke-width:3px;
@@ -104,6 +115,15 @@ graph TD
 ### Component Diagram
 
 ```mermaid
+%%{init: {
+  'theme': 'base',
+  'themeVariables': {
+    'textColor': '#1e293b',
+    'primaryTextColor': '#1e293b',
+    'lineColor': '#64748b',
+    'edgeLabelBackground': '#ffffff'
+  }
+}}%%
 graph TB
     %% Styles
     classDef webapp fill:#10b981,stroke:#059669,color:#ffffff,stroke-width:3px;
@@ -181,6 +201,27 @@ graph TB
 ### Sequence Diagram
 
 ```mermaid
+%%{init: {
+  'theme': 'base',
+  'themeVariables': {
+    'primaryColor': '#e0f2fe',
+    'primaryTextColor': '#1e293b',
+    'primaryBorderColor': '#0284c7',
+    'lineColor': '#475569',
+    'textColor': '#1e293b',
+    'actorTextColor': '#1e293b',
+    'actorBkg': '#e0f2fe',
+    'actorBorder': '#0284c7',
+    'signalColor': '#475569',
+    'signalTextColor': '#1e293b',
+    'labelTextColor': '#1e293b',
+    'loopTextColor': '#1e293b',
+    'noteBkgColor': '#fef9c3',
+    'noteTextColor': '#1e293b',
+    'noteBorderColor': '#eab308',
+    'sequenceNumberColor': '#1e293b'
+  }
+}}%%
 sequenceDiagram
     autonumber
     participant Owner as Owner
@@ -259,6 +300,24 @@ sequenceDiagram
 ### State Machine Diagram
 
 ```mermaid
+%%{init: {
+  'theme': 'base',
+  'themeVariables': {
+    'primaryColor': '#ede9fe',
+    'primaryTextColor': '#1e293b',
+    'primaryBorderColor': '#7c3aed',
+    'lineColor': '#475569',
+    'textColor': '#1e293b',
+    'labelTextColor': '#1e293b',
+    'stateLabelColor': '#1e293b',
+    'stateBkg': '#ede9fe',
+    'transitionColor': '#475569',
+    'transitionLabelColor': '#1e293b',
+    'compositeTitleBackground': '#ddd6fe',
+    'compositeBackground': '#f5f3ff',
+    'altBackground': '#f5f3ff'
+  }
+}}%%
 stateDiagram-v2
     direction LR
     [*] --> AwaitVerification
@@ -367,5 +426,20 @@ Permissions are configured for authenticated users with appropriate read/write a
 
 SafePilot addresses critical road safety challenges by creating an integrated IoT ecosystem that prevents impaired and drowsy driving through multi-layered verification and real-time monitoring. The system empowers vehicle owners with remote oversight capabilities while maintaining driver privacy and providing immediate emergency response protocols.
 
+## Screenshots
 
+### Admin Dashboard
+Real-time monitoring view for admins showing live sensor telemetry (heart rate, alcohol level, speed), driver verification status, ignition/remote control state, and active critical/warning alerts.
+![Admin Dashboard](screenshots/admin-dashboard.png)
 
+### Owner/Admin – Garage Management
+Interface for adding and managing vehicles, including plate number, VIN, make, model, year, and color — along with active driver assignments per car.
+![Garage Management](screenshots/garage-management.png)
+
+### Driver Dashboard
+Driver-facing real-time view showing live heart rate, alcohol level, and speed readings, along with ignition status, remote control state, and active alerts relevant to the current session.
+![Driver Dashboard](screenshots/driver-dashboard.png)
+
+### Driver Records
+Historical view of a driver's session stats (heart rate, drowsiness, alcohol level, proximity) along with a log of recent warning and critical alerts.
+![Driver Records](screenshots/driver-records.png)
