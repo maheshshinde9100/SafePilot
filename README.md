@@ -1,4 +1,6 @@
-# SafePilot – AI-Enabled Vehicle Safety & ADAS System
+![SafePilot Hardware Model](https://raw.githubusercontent.com/maheshshinde9100/SafePilot/docs/outputs/public/hardware-model.webp)
+
+# SafePilot – IoT Alcohol & Drowsiness Safety System
 
 SafePilot is an IoT-enabled safety platform that authenticates drivers (RFID/Fingerprint), screens for alcohol and drowsiness, and empowers car owners/admins with real-time controls, telemetry, and alerting. It integrates edge Python for drowsiness detection with a modern React web app and Appwrite for secure data storage.
 
