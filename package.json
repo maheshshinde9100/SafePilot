@@ -11,13 +11,14 @@
     "mock-server": "node server.js",
     "mqtt-test-server": "node mqtt-test-server.js",
     "appwrite-setup": "node appwrite-setup.js",
-    "appwrite-insert-data": "node appwrite-insert-data.js"
+    "appwrite-insert-data": "node appwrite-insert-data.js",
+    "appwrite:update-passwords": "node modify_pwd.js"
   },
   "dependencies": {
     "@appwrite.io/pink-icons": "^1.0.0",
     "@tailwindcss/vite": "^4.0.14",
     "appwrite": "^17.0.0",
-    "dotenv": "^17.2.2",
+    "dotenv": "^17.4.2",
     "leaflet": "^1.9.4",
     "lucide-react": "^0.544.0",
     "mqtt": "^5.14.1",
